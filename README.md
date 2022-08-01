@@ -1,4 +1,4 @@
-# Feedback-App
+# React-Feedback
 
 ![Screenshot (80)](https://user-images.githubusercontent.com/101992799/182176867-a523aadf-d6a4-4f7d-a22a-b9d5d8c575ee.png)
 
