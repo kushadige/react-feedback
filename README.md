@@ -2,8 +2,6 @@
 
 ![Screenshot (80)](https://user-images.githubusercontent.com/101992799/182176867-a523aadf-d6a4-4f7d-a22a-b9d5d8c575ee.png)
 
-Live demo: https://fabulous-starburst-b84e5f.netlify.app/
-
 ### External modules that have been used in this project
 
 1. react-router-dom 
