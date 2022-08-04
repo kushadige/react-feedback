@@ -4,22 +4,43 @@
 
 Live demo: https://fabulous-starburst-b84e5f.netlify.app/
 
-### Modules:
-* `npm i react-router-dom`
-* `npm i react-icons`
-* `npm i uuid` *( generating unique ids for objects we created )*
-* `npm i framer-motion` *( creating animations on feedback items )*
+### External modules that have been used in this project
 
-### Subjects: 
+1. react-router-dom 
+2. json-server
+    * scripts_> *`"server": "json-server --watch db.json --port 5000"`*
+3. react-icons
+4. uuid 
+5. framer-motion 
+6. concurrently 
+    * scripts_> *`"dev": "concurrently \"npm run server\" \"npm start\""`*
+
+#### Install
+* npm i react-router-dom
+* npm i json-server
+* npm i react-icons
+* npm i uuid
+* npm i framer-motion
+* npm i concurrently
+
+#### Subjects: 
 * Components 
 * Props 
 * States
+* Hooks (useState, useEffect, useParams, useNavigate, useContext... etc)
 * Routes 
 * Prop Drilling
 * Events
 * High order methods (reduce, filter, map)
 * Shared styled components
-* Custom modules
+* External modules
+* Context API
+* Fetch
+* JSON Server
+
+#### Builded with serve module
+* `npm i -g serve`
+* `serve -s build`
 
 # Getting Started with Create React App
 

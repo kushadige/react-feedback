@@ -17,10 +17,15 @@ function Post(){
 
     return(
         <div>
-            <h1>Post {params.id}</h1>
-            {/* <p>Name: {params.name}</p> */}
-            <button onClick={handleClick}>Click</button>
             <Routes>
+                <Route path='/*'
+                    element={
+                        <>
+                            <h1>Post {params.id}</h1>
+                            {/* <p>Name: {params.name}</p> */}
+                            <button onClick={handleClick}>Click</button>
+                        </>
+                    } />
                 <Route path='/show' element={<h1>Hello World</h1>} />
             </Routes>
         </div>
