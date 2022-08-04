@@ -1,6 +1,7 @@
 # Feedback-App
 
 ### Modules:
+* `npm i react-router-dom`
 * `npm i react-icons`
 * `npm i uuid` *( generating unique ids for objects we created )*
 * `npm i framer-motion` *( creating animations on feedback items )*
