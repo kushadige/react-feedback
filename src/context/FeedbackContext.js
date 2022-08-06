@@ -1,11 +1,12 @@
 import { createContext, useState, useEffect } from 'react';
-// import { v4 as uuidv4 } from 'uuid';
+import { v4 as uuidv4 } from 'uuid';
+import FeedbackData from '../data/FeedbackData';
 
 const FeedbackContext = createContext();
 
 export const FeedbackProvider = ({ children }) => {
     const [isLoading, setIsLoading] = useState(true);
-    const [feedback, setFeedback] = useState([]);
+    const [feedback, setFeedback] = useState(FeedbackData);
     const [feedbackEdit, setFeedbackEdit] = useState({
         item: {},
         edit: false
@@ -16,20 +17,24 @@ export const FeedbackProvider = ({ children }) => {
     }, []);
 
     const fetchFeedback = async () => {
+        /*
         const response = await fetch('/feedback?_sort=id&_order=desc');
 
         const data = await response.json();
-
+        
         setFeedback(data);
+        */
         setIsLoading(false);
     }
 
     const deleteFeedback = async (id) => {
         if(window.confirm('Are you sure you want to delete?')){
 
+            /*
             await fetch(`/feedback/${id}`, {
                 method: 'DELETE'
             });
+            */
 
             setFeedback(feedback.filter((item) => item.id !== id));
         }
@@ -37,6 +42,7 @@ export const FeedbackProvider = ({ children }) => {
 
     const addFeedback = async (newFeedback) => {
 
+        /*
         const response = await fetch('/feedback', {
             method: 'POST',
             headers: {
@@ -46,10 +52,11 @@ export const FeedbackProvider = ({ children }) => {
         });
 
         const data = await response.json();
+        */
 
-        // newFeedback.id = uuidv4(); //JSON SERVER CREATES ID AUTOMATICALLY LIKE THE MOST BACK-END/DATABASE SERVICE SO WE DONT NEED to CREATE id FROM uuid ANYMORE..
+        newFeedback.id = uuidv4(); //JSON SERVER CREATES ID AUTOMATICALLY LIKE THE MOST BACK-END/DATABASE SERVICE SO WE DONT NEED to CREATE id FROM uuid ANYMORE..
         
-        setFeedback([data, ...feedback]);
+        setFeedback([newFeedback, ...feedback]);
     }
 
     const editFeedback = (item) => {
@@ -57,7 +64,7 @@ export const FeedbackProvider = ({ children }) => {
     }
 
     const updateFeedback = async (id, updItem) => {
-
+        /*
         const response = await fetch(`/feedback/${id}`, {
             method: 'PUT',
             headers: {
@@ -67,9 +74,9 @@ export const FeedbackProvider = ({ children }) => {
         });
 
         const data = await response.json();
-
+        */
         setFeedback(feedback.map((item) => {
-            return item.id === id ? { ...data } : item;
+            return item.id === id ? { ...updItem } : item;
         }));
 
         setFeedbackEdit({
